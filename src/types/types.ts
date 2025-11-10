@@ -29,7 +29,7 @@ export type PageParams = {
 };
 
 export type HeaderContextType = {
-  headerStyle: string;
+  headerStyle: boolean;
   setHeaderStyle: any;
 };
 
@@ -72,3 +72,17 @@ export type AboutProp = {
 export type Params = {
   slug: string; 
 }
+
+export type Card = {
+  name: string;
+  position: string;
+  image: {
+    url: string;
+  };
+};
+
+export type CardProps = {
+  data?: Card[];
+  styles?: any; 
+  reverse?: boolean
+};

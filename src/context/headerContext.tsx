@@ -6,7 +6,8 @@ import { HeaderContextType } from '@/types/types';
 const HeaderContext = createContext<HeaderContextType | undefined>(undefined);
 
 export function HeaderProvider({ children }: any) {
-  const [headerStyle, setHeaderStyle] = useState<any>({})
+  const [headerStyle, setHeaderStyle] = useState<boolean>(false)
+  
   return <HeaderContext.Provider value={{headerStyle,setHeaderStyle}}>{children}</HeaderContext.Provider>;
 }
 

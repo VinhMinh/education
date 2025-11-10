@@ -1,16 +1,17 @@
 .hero {
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 .cardContainer {
   height: 88vh;
 }
-.cardTop {
-  
+.cards{
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 12.5%, rgb(0, 0, 0) 87.5%, rgba(0, 0, 0, 0) 100%);
 }
-.cardBottom {}
-
 .cardInfo {
   display: inline-block;
   width: max-content;
   background-color: rgba(26, 26, 26, 0.4);
+}
+.img {
+  aspect-ratio: 16 / 9;
 }

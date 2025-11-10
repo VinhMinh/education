@@ -6,7 +6,7 @@ export default function Logo(props : any) {
   return (
     <React.Fragment>
       {props.logoData?.url && (
-        <Link href={'/'}>
+        <Link href={'/'} className='logo'>
           <Image
             src={props.logoData.url}
             alt={props.logoData.alt || 'Logo'}

@@ -32,32 +32,70 @@ body {
 }
 
 header {
-  @apply px-10 py-6 flex items-center justify-between fixed top-0 left-0 w-full z-10;
+  @apply px-5 lg:px-10 py-6 flex items-center justify-between fixed top-0 left-0 w-full z-10;
   backdrop-filter: blur(20px);
   background: linear-gradient(rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 100%) rgba(0, 0, 0, 0.01);
 }
 
+.navToggle {
+  @apply z-20 md:z-0 w-6 h-6 text-white relative md:hidden;
+
+  .open,
+  .close {
+    cursor: pointer;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 300ms;
+    &:not(.active){
+      opacity: 0;
+      visibility: hidden;
+    }
+  }    
+}
+
 .logo {
-  @apply h-8 w-auto;
+  @apply h-8 w-auto z-20;
 }
 
 nav {
-  @apply p-1.5 rounded-[12px] flex items-center;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  @apply z-10 p-1.5 flex flex-col items-center absolute left-0 top-0 pt-28 pl-5 w-full h-screen md:w-auto md:h-auto md:static md:flex-row md:p-1.5 md:rounded-[12px];
+  transition: all 300ms;
+  backdrop-filter: blur(20px);
+  background: linear-gradient(rgb(0, 0, 0) 0%, rgb(16, 42, 86) 100%);
+  &:not(.active){
+    opacity: 0;
+    visibility: hidden;
+    @media (min-width:768px) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @media (min-width:768px) {
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  a {
+    @apply px-4 py-2.5 rounded-[8px] leading-none mb-3 w-full font-bold text-3xl md:text-sm md:w-auto md:mb-0;
+    transition: all 0.3s;
+    &:hover {
+      @media (min-width:768px) {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+    &.active {
+      @media (min-width:768px) {
+        background-color: rgba(26, 26, 26, 0.4);
+      }
+      
+    }
+  }
 }
 
-nav a {
-  @apply text-sm px-4 py-2.5 rounded-[8px] leading-none;
-  transition: all 0.3s;
-  &:hover {
-    background: rgba(255, 255, 255, 0.2);
-  }
-  &.active {
-    background-color: rgba(26, 26, 26, 0.4);
-  }
-}
 
 main {
   @apply pt-24;
@@ -71,7 +109,7 @@ main {
 }
 
 footer {
-  @apply px-10 pt-8 pb-5 text-xs text-[#f2f3f6] opacity-70;
+  @apply px-5 lg:px-10 pt-8 pb-5 text-xs text-[#f2f3f6] opacity-70;
 }
 
 .footerMenu {
