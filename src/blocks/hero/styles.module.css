@@ -1,0 +1,16 @@
+.hero {
+  min-height: 100vh;
+}
+.cardContainer {
+  height: 88vh;
+}
+.cardTop {
+  
+}
+.cardBottom {}
+
+.cardInfo {
+  display: inline-block;
+  width: max-content;
+  background-color: rgba(26, 26, 26, 0.4);
+}

@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000;
+  --foreground: #fff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-thicccboi: var(--font-thicccboi);
+  --font-inter-light: var(--font-inter-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000;
+    --foreground: #fff;
+  }
+}
+
+* {
+  outline: none;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-thicccboi), Arial, Helvetica, sans-serif;
+}
+
+header {
+  @apply px-10 py-6 flex items-center justify-between fixed top-0 left-0 w-full z-10;
+  backdrop-filter: blur(20px);
+  background: linear-gradient(rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 100%) rgba(0, 0, 0, 0.01);
+}
+
+.logo {
+  @apply h-8 w-auto;
+}
+
+nav {
+  @apply p-1.5 rounded-[12px] flex items-center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+nav a {
+  @apply text-sm px-4 py-2.5 rounded-[8px] leading-none;
+  transition: all 0.3s;
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  &.active {
+    background-color: rgba(26, 26, 26, 0.4);
+  }
+}
+
+main {
+  @apply pt-24;
+}
+.bodyBg {
+  @apply fixed h-[100vh] w-[100vw] top-0 left-0 -z-10 overflow-hidden;
+}
+
+.bodyBg img {
+  /* @apply object-top; */
+}
+
+footer {
+  @apply px-10 pt-8 pb-5 text-xs text-[#f2f3f6] opacity-70;
+}
+
+.footerMenu {
+  @apply flex space-x-2 items-center justify-center mb-5;
+}
+
+.copyRight {
+  @apply text-center;
+}
+
+.colorGray {
+  @apply text-[#cfd4dc];
+}
+
+.btnPrimary {
+  @apply text-lg uppercase bg-white hover:bg-white/25 text-black hover:backdrop-filter-[blur(10px)] hover:text-white font-semibold py-4 px-7 rounded-2xl shadow-lg transition duration-300;
+}
