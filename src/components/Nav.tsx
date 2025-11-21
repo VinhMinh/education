@@ -9,7 +9,7 @@ import { useHeaderContext } from "@/context/headerContext";
 
 export default function Nav(props: any) {
   const pathname = usePathname();
-  const { headerStyle } = useHeaderContext()
+  const { headerStyle,setHeaderStyle } = useHeaderContext()
   
   return (
     <nav className={headerStyle ? 'active' : ''}>
@@ -24,7 +24,8 @@ export default function Nav(props: any) {
           <Link
             key={`nav-${index}`}
             target={item.linkHeader?.target || "_self"}
-            href={useReplaceUrl(item.linkHeader?.url) || "/"}
+            href={"/"+useReplaceUrl(item.linkHeader?.url) || "/"}
+            onClick={()=> setHeaderStyle(false)}
             className={`footerMenuItem ${ isActive ? "active" : ""}`}>
             {item.linkHeader?.title}
           </Link>

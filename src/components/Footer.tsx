@@ -12,7 +12,7 @@ export default function Footer(props : any) {
         <div className="footerMenu">
           {dataSetting.menuFooter.map((item: any, index: number) => (
             <React.Fragment key={index}>
-              <Link target={item.linkFooter?.target || '_self'} href={useReplaceUrl(item.linkFooter?.url) || '#'} className="footerMenuItem">
+              <Link target={item.linkFooter?.target || '_self'} href={"/"+useReplaceUrl(item.linkFooter?.url) || '#'} className="footerMenuItem">
                 {item.linkFooter?.title}
               </Link>
               {index < dataSetting.menuFooter.length - 1 && (

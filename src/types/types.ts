@@ -28,6 +28,12 @@ export type PageParams = {
   };
 };
 
+export type HiringParams = {
+  params: {
+    hiringSlug?: string | string[];
+  };
+};
+
 export type HeaderContextType = {
   headerStyle: boolean;
   setHeaderStyle: any;

@@ -2,7 +2,7 @@
 
 :root {
   --background: #000;
-  --foreground: #fff;
+  --foreground: #f2f3f6;
 }
 
 @theme inline {
@@ -17,7 +17,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000;
-    --foreground: #fff;
+    --foreground: #f2f3f6;
   }
 }
 
@@ -126,4 +126,120 @@ footer {
 
 .btnPrimary {
   @apply text-lg uppercase bg-white hover:bg-white/25 text-black hover:backdrop-filter-[blur(10px)] hover:text-white font-semibold py-4 px-7 rounded-2xl shadow-lg transition duration-300;
+}
+
+.container {
+  @apply max-w-[1000px] mx-auto;
+}
+
+.content {
+  @apply max-w-[800px] mx-auto;
+}
+
+.editorContent {
+  @apply leading-[normal];
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold mt-8 mb-3 ;
+  }
+
+  h1 { @apply text-3xl; }
+  h2 { @apply text-2xl; }
+  h3 { @apply text-xl; }
+  h4 { @apply text-lg; }
+  h5 { @apply text-base; }
+  h6 { @apply text-sm; }
+
+  /* Paragraph */
+  p {
+   
+    &:not(:last-child) {
+       @apply mb-5;
+    }
+
+  }
+
+  /* Links */
+  a {
+    @apply text-sky-600 dark:text-sky-400 hover:underline transition-colors;
+  }
+
+  /* Lists */
+  ul, ol {
+    @apply my-4 pl-6;
+  }
+
+  ul li {
+    @apply list-disc mb-1;
+  }
+  ol li {
+    @apply list-decimal mb-1;
+  }
+
+  /* Blockquote */
+  blockquote {
+    @apply border-l-4 border-sky-500 pl-4 italic my-6 text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-800 rounded-md;
+  }
+
+  /* Images */
+  img {
+    @apply my-6 rounded-lg max-w-full h-auto;
+  }
+
+  /* Tables */
+  table {
+    @apply w-full border-collapse my-6 text-sm;
+  }
+
+  th, td {
+    @apply border border-gray-300 dark:border-gray-700 px-3 py-2 text-left;
+  }
+
+  th {
+    @apply bg-gray-100 dark:bg-gray-700 font-semibold;
+  }
+
+  /* Code blocks */
+  pre {
+    @apply bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-md p-4 my-6 overflow-x-auto font-mono text-sm;
+  }
+
+  code {
+    @apply bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5 font-mono text-sm;
+  }
+
+  /* Horizontal line */
+  hr {
+    @apply my-8 border-t border-gray-200 dark:border-gray-700;
+  }
+
+  /* Iframes (YouTube, embeds) */
+  iframe {
+    @apply w-full rounded-lg my-6;
+  }
+
+  strong {
+    @apply font-bold;
+  }
+
+  em {
+    @apply italic;
+  }
+}
+
+.hiringSub {
+  @apply grid grid-cols-2 lg:flex gap-2.5 w-full
+}
+
+.hiringSubItem{
+  @apply border-l border-[#ffffff99] pl-3 w-full lg:w-1/4
+}
+
+.form {
+  background: linear-gradient(#0000 0%,#000 100%);
+  @apply flex flex-wrap border border-[#ffffff26] w-full max-w-[580px] mx-auto p-10 rounded-[10px] gap-5 text-left; 
+}
+
+.line-gradient{
+  background-color: #00000077 !important;
 }

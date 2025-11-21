@@ -1,24 +1,21 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
 import { useHeaderContext } from "@/context/headerContext";
 import Logo from "./Logo";
 import Nav from "./Nav";
 
 export default function Header(props: any) {
   const { dataSetting } = props;
-  const [status, setStatus] = useState(false)
-  const { setHeaderStyle } = useHeaderContext()
+  const { headerStyle,setHeaderStyle } = useHeaderContext()
   const handleClick = () =>{
-    setStatus(!status)
-    setHeaderStyle(!status)
+    setHeaderStyle(!headerStyle)
   }
   return (
     <header>
       <Logo logoData={dataSetting?.logo} />
       <Nav menuHeader={dataSetting?.menuHeader} />
       <div className="navToggle">
-        <div className={`open jsOpenNav ${ !status && 'active'}`} onClick={handleClick}>
+        <div className={`open jsOpenNav ${ (!headerStyle) && 'active'}`} onClick={handleClick}>
           <svg
             display="block"
             role="presentation"
@@ -63,7 +60,7 @@ export default function Header(props: any) {
               width="16px"></path>
           </svg>
         </div>
-        <div className={`close jsCloseNav ${ status && 'active'}`} onClick={handleClick}>
+        <div className={`close jsCloseNav ${ (headerStyle) && 'active'}`} onClick={handleClick}>
           <svg
             display="block"
             role="presentation"

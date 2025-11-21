@@ -1,19 +1,15 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import { BlockProp } from '@/types/types';
-import BlockFound from './blockFound';
+import NotFound from '@/components/404';
 
 export default function Blocks({data}:any) {
 
   const blocks = data?.acf?.components
-  
+
   if (!blocks || !Array.isArray(blocks) || blocks.length === 0) {
     return (
-      <div className="h-full">
-        <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 2xl:px-48 text-xl">
-          <BlockFound title="noBlock"/>
-        </div>
-      </div>
+      <NotFound />
     )
   }
 

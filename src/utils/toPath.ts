@@ -1,0 +1,1 @@
+export const toPath = (arr:string[]):string => arr.join('/')
